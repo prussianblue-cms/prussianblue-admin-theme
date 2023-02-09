@@ -1,0 +1,36 @@
+body {
+  border: 100px solid red;
+}
+
+/*
+ * Styles of the content paragraphs (rich text, image, video, etc...)
+ */
+.paragraph:not(.paragraph--type--pb-layout) {
+  margin: 1em 1em;
+}
+
+.paragraph:not(.paragraph--type--pb-layout) .paragraph__heading__wrapper {
+  background-color: rgba(0, 0, 0, .05);
+  padding: .5em 1em .5em 50px;
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: 1em center;
+}
+
+.paragraph:not(.paragraph--type--pb-layout) .paragraph__heading {
+  margin: 0;
+  font-size: 1em;
+  font-weight: normal
+}
+
+.paragraph:not(.paragraph--type--pb-layout) .paragraph__heading .paragraph__heading__icon {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.paragraph:not(.paragraph--type--pb-layout) .paragraph__content {
+  padding: .5em;
+  font-size: 1em;
+}

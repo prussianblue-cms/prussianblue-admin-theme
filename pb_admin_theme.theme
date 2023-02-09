@@ -4,9 +4,31 @@
  * Implements hook_form_alter()
  */
 function pb_admin_theme_form_alter(&$form, $form_state, $form_id) {
-  $pb_edit_forms_pattern = '/^node_pb_[a-z_]+_form/'; // this will catch both the creation and edit forms
 
+  // Add UI improvements to the node editing forms
+  // only for PB node types
+  $pb_edit_forms_pattern = '/^node_pb_[a-z_]+_form/'; // this will catch both the creation and edit forms
   if(preg_match($pb_edit_forms_pattern, $form_id)) {
-    $form['#attached']['library'][] = 'pb_editor_ui/pb_layout_paragraphs_ui_improvements';
+    $form['#attached']['library'][] = 'pb_admin_theme/pb_layout_paragraphs_ui_improvements';
+    $form['#attached']['library'][] = 'pb_admin_theme/pb_paragraphs_preview';
+  }
+}
+
+function pb_admin_theme_preprocess_paragraph(&$variables) {
+  // Get the paragraph type
+  // Load the type definition
+  // Get the icon URL from the type definition
+  // Set the icon URl to the paragraph
+  $paragraph = $variables['paragraph'];
+  $paragraph_type = $paragraph->type->target_id;
+
+  if(preg_match('/^pb_/', $paragraph_type)) {
+    // $paragraph_type_entity = \Drupal::entityTypeManager()->getStorage('paragraphs_type')->load($paragraph_type);
+    // $paragraph_type_icon = $paragraph_type_entity->getIconURL();
+
+    $variables['paragraph_type_icon'] = $paragraph_type_icon;
+    $variables['paragraph_type_icon'] = $variables['paragraph']->type->entity->getIconURL();
+
+    $variables['paragraph_type_label'] = $variables['paragraph']->type->entity->label();
   }
 }

@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Theme implementation to display a paragraph in preview mode, for the editor interface.
+ * Inherits variables from paragraph.html.twig
+ *
+ * @see template_preprocess_paragraph()
+ */
+#}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+  {{ attach_library('pb_admin_theme/pb_paragraphs_preview') }}
+  <div{{ attributes.addClass(classes) }}>
+    <div class="paragraph__heading__wrapper">
+      <h2 class="paragraph__heading"><img src="{{ paragraph_type_icon }}" class="paragraph__heading__icon">{{ paragraph_type_label }}</h2>
+    </div>
+    <div class="paragraph__content">
+      {% block content %}
+        {{ content }}
+      {% endblock %}
+    </div>
+  </div>
+{% endblock paragraph %}
