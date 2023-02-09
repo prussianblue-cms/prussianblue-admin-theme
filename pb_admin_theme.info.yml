@@ -1,0 +1,19 @@
+name: PrussianBlue Admin Theme
+type: theme
+description: Administration theme for PrussianBlue, based on Claro
+core_version_requirement: ^9 || ^10
+base theme: claro
+libraries:
+  - pb_admin_theme/pb_layout_paragraphs_ui_improvements
+regions:
+  header: 'Header'
+  pre_content: 'Pre-content'
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  sidebar_first: 'First sidebar'
+regions_hidden:
+  - sidebar_first
