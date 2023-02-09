@@ -23,10 +23,6 @@ function pb_admin_theme_preprocess_paragraph(&$variables) {
   $paragraph_type = $paragraph->type->target_id;
 
   if(preg_match('/^pb_/', $paragraph_type)) {
-    // $paragraph_type_entity = \Drupal::entityTypeManager()->getStorage('paragraphs_type')->load($paragraph_type);
-    // $paragraph_type_icon = $paragraph_type_entity->getIconURL();
-
-    $variables['paragraph_type_icon'] = $paragraph_type_icon;
     $variables['paragraph_type_icon'] = $variables['paragraph']->type->entity->getIconURL();
 
     $variables['paragraph_type_label'] = $variables['paragraph']->type->entity->label();

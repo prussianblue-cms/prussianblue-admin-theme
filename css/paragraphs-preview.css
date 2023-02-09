@@ -1,5 +1,8 @@
-body {
-  border: 100px solid red;
+/*
+ * Hide the heading for the layout paragraphs
+ */
+.paragraph.paragraph--type--pb-layout > .paragraph__heading__wrapper {
+  display: none;
 }
 
 /*
@@ -11,22 +14,21 @@ body {
 
 .paragraph:not(.paragraph--type--pb-layout) .paragraph__heading__wrapper {
   background-color: rgba(0, 0, 0, .05);
-  padding: .5em 1em .5em 50px;
-  background-repeat: no-repeat;
-  background-size: 15px;
-  background-position: 1em center;
+  padding: .5em 1em;
 }
 
 .paragraph:not(.paragraph--type--pb-layout) .paragraph__heading {
   margin: 0;
   font-size: 1em;
-  font-weight: normal
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  justify-content: start;
 }
 
 .paragraph:not(.paragraph--type--pb-layout) .paragraph__heading .paragraph__heading__icon {
-  width: 25px;
-  height: 25px;
-  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
   margin-right: 1em;
 }
 

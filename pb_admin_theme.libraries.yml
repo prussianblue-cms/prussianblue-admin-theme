@@ -5,4 +5,4 @@ pb_layout_paragraphs_ui_improvements:
 pb_paragraphs_preview:
   css:
     theme:
-      css/paragraps-preview.css: {}
+      css/paragraphs-preview.css: {}
