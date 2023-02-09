@@ -1,4 +1,4 @@
-name: PrussianBlue Admin Theme
+name: PrussianBlue Admin
 type: theme
 description: Administration theme for PrussianBlue, based on Claro
 core_version_requirement: ^9 || ^10
