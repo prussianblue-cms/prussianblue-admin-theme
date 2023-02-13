@@ -36,3 +36,15 @@
   padding: .5em;
   font-size: 1em;
 }
+
+/*
+ * Styles for the logo strip, that contains nested images
+ */
+.paragraph--type--pb-logo-strip .field--name-field-pb-logos {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.paragraph--type--pb-logo-strip .field--name-field-pb-logos > .field__item {
+  flex-basis: 20%;
+}
